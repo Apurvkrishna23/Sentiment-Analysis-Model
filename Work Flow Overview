@@ -1,0 +1,95 @@
+📊 Workflow Overview
+1️⃣ Load & Understand Data (EDA)
+
+Inspect class imbalance
+
+Analyze tweet length & text patterns
+
+Generate WordCloud
+
+Check distribution of labels
+
+Inspect sample tweets
+
+2️⃣ Preprocessing
+
+Remove URLs, mentions, special characters
+
+Lowercasing
+
+Lemmatization
+
+Stopword removal
+
+Feature engineering:
+
+Tweet length
+
+Number of hashtags, mentions
+
+URL flag
+
+VADER sentiment score (optional)
+
+3️⃣ Model Training
+
+✔ TF–IDF Vectorizer (1–2 n-grams)
+✔ Logistic Regression with class balancing
+✔ Optional: LSTM deep learning model with Embeddings
+
+4️⃣ Evaluation Metrics
+
+Accuracy
+
+Precision / Recall / F1
+
+Confusion Matrix
+
+ROC–AUC Curve
+
+SHAP Explainability (optional)
+
+5️⃣ Saving Artifacts
+
+Save pipeline to models/tfidf_logreg_pipeline.pkl
+
+Save tokenizer + LSTM weights (optional)
+
+6️⃣ Deployment
+✔ FastAPI Backend
+
+Endpoints:
+
+GET /health
+POST /predict
+
+
+Request:
+
+{
+  "text": "The flight was delayed but the crew was nice!"
+}
+
+
+Response:
+
+{
+  "prediction": "positive",
+  "positive_probability": 0.8421
+}
+
+✔ Streamlit Dashboard
+
+User enters tweet
+
+Dashboard predicts sentiment
+
+Displays results + probabilities
+
+Can display charts (WordCloud, class distribution, etc.)
+
+✔ Docker Support
+
+API can be containerized with the provided Dockerfile
+
+Deployable to Render / Railway / AWS / Azure
